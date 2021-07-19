@@ -199,7 +199,8 @@ mnist_shape = (1, 28, 28)
 n_classes = 10
 
 criterion = nn.BCEWithLogitsLoss()
-n_epochs = 200
+# n_epochs = 200
+n_epochs = 75
 z_dim = 64
 display_step = 500
 batch_size = 128
@@ -279,6 +280,7 @@ disc_real_pred = False
 
 for epoch in range(n_epochs):
     # Dataloader returns the batches and the labels
+    print(f"epoch {epoch}")
     for real, labels in tqdm(dataloader):
         cur_batch_size = len(real)
         # Flatten the batch of real images from the dataset
